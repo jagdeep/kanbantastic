@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Jagdeep Singh"]
   s.email       = ["jagdeepkh@gmail.com"]
-  s.homepage    = "https://github.com/Ennova/kanbantastic"
-  s.summary     = %q{Gives you methods to manage your kanbanery resources like a project's tasks, columns and more}
+  s.homepage    = "https://github.com/Ennova/Kanbantastic"
+  s.summary     = %q{Provides a ruby interface to manage your kanbanery resources like a project's tasks, columns and more}
   s.description = %q{Use this gem to interact with kanbanery API}
 
   s.rubyforge_project = "kanbantastic"
@@ -27,4 +27,9 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency('activemodel')
   s.add_runtime_dependency('httparty')
+
+  s.add_development_dependency('rspec')
+  s.add_development_dependency('fakeweb')
+  s.add_development_dependency('vcr')
+  s.add_development_dependency('mocha')
 end
