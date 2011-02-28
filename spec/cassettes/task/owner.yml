@@ -1,0 +1,98 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: https://envision.kanbanery.com:443/api/v1/projects/2817/users.json
+    body: 
+    headers: 
+      x-kanbanery-apitoken: 
+      - secret
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      etag: 
+      - "\"138b53eb58c2e2ee3a1e1c35558e63fb\""
+      content-type: 
+      - application/json; charset=utf-8
+      x-runtime: 
+      - "0.094231"
+      date: 
+      - Fri, 25 Feb 2011 06:40:56 GMT
+      server: 
+      - nginx/0.8.53
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      status: 
+      - 200 OK
+      transfer-encoding: 
+      - chunked
+    body: "[{\"id\":1966,\"email\":\"hugh.hofmeister@ennova.com.au\",\"first_name\":\"Hugh\",\"last_name\":\"Hofmeister\",\"gravatar_url\":\"https://secure.gravatar.com/avatar/408219f64c23f8ad9085e57fe5fc95e9\",\"_obsolete\":false,\"type\":\"User\"},{\"id\":2607,\"email\":\"jagdeep.singh@ennova.com.au\",\"first_name\":null,\"last_name\":null,\"gravatar_url\":\"https://secure.gravatar.com/avatar/ed2612877ca2f78b8000f38ce4419208\",\"_obsolete\":false,\"type\":\"User\"},{\"id\":2608,\"email\":\"cbf4.downer@envisionapp.com\",\"first_name\":null,\"last_name\":null,\"gravatar_url\":\"https://secure.gravatar.com/avatar/b7b1b1092cbedab00859f1643a6ca719\",\"_obsolete\":false,\"type\":\"User\"},{\"id\":2862,\"email\":\"rostyk.kudlak@gmail.com\",\"first_name\":null,\"last_name\":null,\"gravatar_url\":\"https://secure.gravatar.com/avatar/e165ef848465058fae37de8070844021\",\"_obsolete\":false,\"type\":\"User\"}]"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://envision.kanbanery.com:443/api/v1/projects/2817/tasks.json
+    body: task[owner_id]=1966&task[title]=Test%20Task&task[task_type_name]=Work%20Package
+    headers: 
+      x-kanbanery-apitoken: 
+      - secret
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 201
+      message: Created
+    headers: 
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      content-type: 
+      - application/json; charset=utf-8
+      x-runtime: 
+      - "0.365952"
+      date: 
+      - Fri, 25 Feb 2011 06:41:00 GMT
+      server: 
+      - nginx/0.8.53
+      cache-control: 
+      - no-cache
+      status: 
+      - 201 Created
+      transfer-encoding: 
+      - chunked
+    body: "{\"id\":36828,\"created_at\":\"2011-02-25T06:41:00+00:00\",\"updated_at\":\"2011-02-25T06:41:00+00:00\",\"title\":\"Test Task\",\"description\":null,\"task_type_id\":15592,\"estimate_id\":null,\"column_id\":15090,\"creator_id\":2608,\"owner_id\":1966,\"position\":23,\"priority\":null,\"ready_to_pull\":false,\"moved_at\":null,\"deadline\":null,\"blocked\":false,\"type\":\"Task\"}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: https://envision.kanbanery.com:443/api/v1/projects/2817/users.json
+    body: 
+    headers: 
+      x-kanbanery-apitoken: 
+      - secret
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      etag: 
+      - "\"138b53eb58c2e2ee3a1e1c35558e63fb\""
+      content-type: 
+      - application/json; charset=utf-8
+      x-runtime: 
+      - "0.098148"
+      date: 
+      - Fri, 25 Feb 2011 06:41:02 GMT
+      server: 
+      - nginx/0.8.53
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      status: 
+      - 200 OK
+      transfer-encoding: 
+      - chunked
+    body: "[{\"id\":1966,\"email\":\"hugh.hofmeister@ennova.com.au\",\"first_name\":\"Hugh\",\"last_name\":\"Hofmeister\",\"gravatar_url\":\"https://secure.gravatar.com/avatar/408219f64c23f8ad9085e57fe5fc95e9\",\"_obsolete\":false,\"type\":\"User\"},{\"id\":2607,\"email\":\"jagdeep.singh@ennova.com.au\",\"first_name\":null,\"last_name\":null,\"gravatar_url\":\"https://secure.gravatar.com/avatar/ed2612877ca2f78b8000f38ce4419208\",\"_obsolete\":false,\"type\":\"User\"},{\"id\":2608,\"email\":\"cbf4.downer@envisionapp.com\",\"first_name\":null,\"last_name\":null,\"gravatar_url\":\"https://secure.gravatar.com/avatar/b7b1b1092cbedab00859f1643a6ca719\",\"_obsolete\":false,\"type\":\"User\"},{\"id\":2862,\"email\":\"rostyk.kudlak@gmail.com\",\"first_name\":null,\"last_name\":null,\"gravatar_url\":\"https://secure.gravatar.com/avatar/e165ef848465058fae37de8070844021\",\"_obsolete\":false,\"type\":\"User\"}]"
+    http_version: "1.1"

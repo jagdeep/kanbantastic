@@ -1,0 +1,65 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://envision.kanbanery.com:443/api/v1/projects/2817/tasks.json
+    body: task[title]=Test%20Task&task[task_type_name]=Work%20Package
+    headers: 
+      x-kanbanery-apitoken: 
+      - secret
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 201
+      message: Created
+    headers: 
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      content-type: 
+      - application/json; charset=utf-8
+      x-runtime: 
+      - "0.211912"
+      date: 
+      - Fri, 25 Feb 2011 06:37:34 GMT
+      server: 
+      - nginx/0.8.53
+      cache-control: 
+      - no-cache
+      status: 
+      - 201 Created
+      transfer-encoding: 
+      - chunked
+    body: "{\"id\":36820,\"created_at\":\"2011-02-25T06:37:34+00:00\",\"updated_at\":\"2011-02-25T06:37:34+00:00\",\"title\":\"Test Task\",\"description\":null,\"task_type_id\":15592,\"estimate_id\":null,\"column_id\":15090,\"creator_id\":2608,\"owner_id\":null,\"position\":19,\"priority\":null,\"ready_to_pull\":false,\"moved_at\":null,\"deadline\":null,\"blocked\":false,\"type\":\"Task\"}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: https://envision.kanbanery.com:443/api/v1/projects/2817/columns.json
+    body: 
+    headers: 
+      x-kanbanery-apitoken: 
+      - secret
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      etag: 
+      - "\"d1121ce95abe358a3d246bd6bd39d641\""
+      content-type: 
+      - application/json; charset=utf-8
+      x-runtime: 
+      - "0.049632"
+      date: 
+      - Fri, 25 Feb 2011 06:37:36 GMT
+      server: 
+      - nginx/0.8.53
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      status: 
+      - 200 OK
+      transfer-encoding: 
+      - chunked
+    body: "[{\"id\":15090,\"created_at\":\"2011-01-18T23:54:09+00:00\",\"updated_at\":\"2011-01-18T23:58:04+00:00\",\"type\":\"Column\",\"project_id\":2817,\"name\":\"Ready\",\"capacity\":null,\"fixed\":true,\"position\":1},{\"id\":15092,\"created_at\":\"2011-01-18T23:57:54+00:00\",\"updated_at\":\"2011-01-18T23:57:54+00:00\",\"type\":\"Column\",\"project_id\":2817,\"name\":\"WIP\",\"capacity\":null,\"fixed\":false,\"position\":2},{\"id\":15091,\"created_at\":\"2011-01-18T23:54:09+00:00\",\"updated_at\":\"2011-01-18T23:54:09+00:00\",\"type\":\"Column\",\"project_id\":2817,\"name\":\"Done\",\"capacity\":null,\"fixed\":true,\"position\":3}]"
+    http_version: "1.1"

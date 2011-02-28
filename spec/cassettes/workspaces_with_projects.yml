@@ -1,0 +1,34 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: https://envision.kanbanery.com:443/api/v1/user/workspaces.json
+    body: 
+    headers: 
+      x-kanbanery-apitoken: 
+      - secret
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      etag: 
+      - "\"cf635ee532837d23042ebb8ea414e27c\""
+      content-type: 
+      - application/json; charset=utf-8
+      x-runtime: 
+      - "0.037703"
+      date: 
+      - Fri, 25 Feb 2011 06:37:10 GMT
+      server: 
+      - nginx/0.8.53
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      status: 
+      - 200 OK
+      transfer-encoding: 
+      - chunked
+    body: "[{\"id\":1394,\"created_at\":\"2010-10-19T11:29:31+00:00\",\"updated_at\":\"2010-10-19T11:29:31+00:00\",\"name\":\"envision\",\"type\":\"Workspace\",\"projects\":[{\"id\":2817,\"created_at\":\"2011-01-18T23:54:09+00:00\",\"updated_at\":\"2011-02-04T02:33:32+00:00\",\"name\":\"Envision Integration\",\"url\":\"https://envision.kanbanery.com/projects/2817\",\"type\":\"Project\"}]}]"
+    http_version: "1.1"
