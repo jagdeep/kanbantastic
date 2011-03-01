@@ -1,8 +1,8 @@
 require 'active_model'
 require 'httparty'
 
-require 'lib/kanbantastic/base'
-require 'lib/kanbantastic/task'
-require 'lib/kanbantastic/column'
-require 'lib/kanbantastic/config'
-require 'lib/kanbantastic/user'
+require File.join(File.dirname(__FILE__), 'kanbantastic/base')
+require File.join(File.dirname(__FILE__), 'kanbantastic/task')
+require File.join(File.dirname(__FILE__), 'kanbantastic/column')
+require File.join(File.dirname(__FILE__), 'kanbantastic/config')
+require File.join(File.dirname(__FILE__), 'kanbantastic/user')
