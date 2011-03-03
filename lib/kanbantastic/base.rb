@@ -14,20 +14,32 @@ module Kanbantastic
 
     def get(url, options={})
       self.class.setup_headers(config.api_key)
-      response = self.class.get(self.class.base_uri(config.workspace) + url, options).parsed_response
-      self.class.symbolize_keys(response)
+      response = self.class.get(self.class.base_uri(config.workspace) + url, options)
+      if response.code == 200
+        self.class.symbolize_keys(response.parsed_response)
+      else
+        raise response.headers['status']
+      end
     end
 
     def post(url, options={})
       self.class.setup_headers(config.api_key)
-      response = self.class.post(self.class.base_uri(config.workspace) + url, options).parsed_response
-      self.class.symbolize_keys(response)
+      response = self.class.post(self.class.base_uri(config.workspace) + url, options)
+      if response.code == 201
+        self.class.symbolize_keys(response.parsed_response)
+      else
+        raise response.headers['status']
+      end
     end
 
     def put(url, options={})
       self.class.setup_headers(config.api_key)
-      response = self.class.put(self.class.base_uri(config.workspace) + url, options).parsed_response
-      self.class.symbolize_keys(response)
+      response = self.class.put(self.class.base_uri(config.workspace) + url, options)
+      if response.code == 200
+        self.class.symbolize_keys(response.parsed_response)
+      else
+        raise response.headers['status']
+      end
     end
 
     def project_id

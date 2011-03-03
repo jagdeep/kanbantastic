@@ -22,7 +22,11 @@ module Kanbantastic
 
     def update(params={})
       params[:owner_id] ||= self.owner_id
-      response = put("/tasks/#{id}.json", :body => {:task => params})
+      begin
+        response = put("/tasks/#{id}.json", :body => {:task => params})
+      rescue Exception => e
+        self.class.invalid_response_error("Unable to update task. #{e.message}", response)
+      end
       if response[:id]
         assign_attributes(response)
         return valid?
@@ -116,7 +120,11 @@ module Kanbantastic
     end
 
     def self.find(config, id)
-      response = request(:get, config, "/tasks/#{id}.json")
+      begin
+        response = request(:get, config, "/tasks/#{id}.json")
+      rescue
+        return nil
+      end
       task = new(config, response)
       if task.valid?
         return task

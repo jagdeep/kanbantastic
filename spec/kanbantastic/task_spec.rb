@@ -107,7 +107,7 @@ describe Kanbantastic::Task do
 
     it "should raise an error if unable to move task" do
       @task.id = nil
-      lambda{@task.move_to_next_column}.should raise_error(RuntimeError, "Unable to update task.")
+      lambda{@task.move_to_next_column}.should raise_error(RuntimeError, "Unable to update task. 404 Not Found")
     end
   end
 
@@ -129,7 +129,7 @@ describe Kanbantastic::Task do
 
     it "should raise an error if unable to move task" do
       @task.id = nil
-      lambda{@task.move_to_previous_column}.should raise_error(RuntimeError, "Unable to update task.")
+      lambda{@task.move_to_previous_column}.should raise_error(RuntimeError, "Unable to update task. 404 Not Found")
     end
   end
 
@@ -154,7 +154,7 @@ describe Kanbantastic::Task do
     it "should raise an error if unable to move task" do
       @task.move_to_second_column
       @task.id = nil
-      lambda{@task.move_to_first_column}.should raise_error(RuntimeError, "Unable to update task.")
+      lambda{@task.move_to_first_column}.should raise_error(RuntimeError, "Unable to update task. 404 Not Found")
     end
   end
 
@@ -178,7 +178,7 @@ describe Kanbantastic::Task do
 
     it "should raise an error if unable to move task" do
       @task.id = nil
-      lambda{@task.move_to_second_column}.should raise_error(RuntimeError, "Unable to update task.")
+      lambda{@task.move_to_second_column}.should raise_error(RuntimeError, "Unable to update task. 404 Not Found")
     end
   end
 
@@ -202,7 +202,7 @@ describe Kanbantastic::Task do
 
     it "should raise an error if unable to move task" do
       @task.id = nil
-      lambda{@task.move_to_last_column}.should raise_error(RuntimeError, "Unable to update task.")
+      lambda{@task.move_to_last_column}.should raise_error(RuntimeError, "Unable to update task. 404 Not Found")
     end
   end
 
