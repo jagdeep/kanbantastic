@@ -13,6 +13,8 @@ module Kanbantastic
     end
 
     def get(url, options={})
+      check_parameter_format(:url => [url, String], :options => [options, Hash])
+
       self.class.setup_headers(config.api_key)
       response = self.class.get(self.class.base_uri(config.workspace) + url, options)
       if response.code == 200
@@ -23,6 +25,8 @@ module Kanbantastic
     end
 
     def post(url, options={})
+      check_parameter_format(:url => [url, String], :options => [options, Hash])
+
       self.class.setup_headers(config.api_key)
       response = self.class.post(self.class.base_uri(config.workspace) + url, options)
       if response.code == 201
@@ -33,6 +37,8 @@ module Kanbantastic
     end
 
     def put(url, options={})
+      check_parameter_format(:url => [url, String], :options => [options, Hash])
+
       self.class.setup_headers(config.api_key)
       response = self.class.put(self.class.base_uri(config.workspace) + url, options)
       if response.code == 200
@@ -78,6 +84,17 @@ module Kanbantastic
     end
 
     private
+
+    def check_parameter_format options={}
+      raise "options must be a Hash" unless options.instance_of?(Hash)
+      options.each do |key, value|
+        raise "options Hash must have each key as a Symbol or a String" unless key.instance_of?(Symbol) or key.instance_of?(String)
+        if value.class != Array or value.length != 2 or value[1].class != Class
+          raise "each value of options Hash must be an Array of a parameter and its expected class."
+        end
+        raise "#{key} must be a #{value[1]}." unless value[0].instance_of? value[1]
+      end
+    end
 
     def self.base_uri workspace
       "https://#{workspace}.kanbanery.com/api/v1"
