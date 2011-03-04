@@ -5,6 +5,8 @@ module Kanbantastic
     include ActiveModel::Validations
     validates_presence_of :config
 
+    RECTIFY_TIME_FOR = [:updated_at, :created_at, :moved_at]
+
     attr_accessor :config
 
     def initialize(config)
@@ -18,7 +20,7 @@ module Kanbantastic
       self.class.setup_headers(config.api_key)
       response = self.class.get(self.class.base_uri(config.workspace) + url, options)
       if response.code == 200
-        self.class.symbolize_keys(response.parsed_response)
+        self.class.parse_response(response)
       else
         raise response.headers['status']
       end
@@ -30,7 +32,7 @@ module Kanbantastic
       self.class.setup_headers(config.api_key)
       response = self.class.post(self.class.base_uri(config.workspace) + url, options)
       if response.code == 201
-        self.class.symbolize_keys(response.parsed_response)
+        self.class.parse_response(response)
       else
         raise response.headers['status']
       end
@@ -42,7 +44,7 @@ module Kanbantastic
       self.class.setup_headers(config.api_key)
       response = self.class.put(self.class.base_uri(config.workspace) + url, options)
       if response.code == 200
-        self.class.symbolize_keys(response.parsed_response)
+        self.class.parse_response(response)
       else
         raise response.headers['status']
       end
@@ -84,6 +86,20 @@ module Kanbantastic
     end
 
     private
+
+    def self.parse_response response
+      rectify_time(symbolize_keys(response.parsed_response), Time.parse(response.header['date']))
+    end
+
+    def self.rectify_time response, time
+      diff = Time.now.utc.to_i - time.utc.to_i
+      if response.class == Array
+        response.each{|r| RECTIFY_TIME_FOR.each{|k| (r[k] += diff) if r[k]}}
+      else
+        RECTIFY_TIME_FOR.each{|k| (response[k] += diff) if response[k]}
+      end
+      return response
+    end
 
     def check_parameter_format options={}
       raise "options must be a Hash" unless options.instance_of?(Hash)
