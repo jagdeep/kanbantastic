@@ -1,0 +1,137 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: https://envision.kanbanery.com:443/api/v1test
+    body: 
+    headers: 
+      x-kanbanery-apitoken: 
+      - secret
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 404
+      message: Not Found
+    headers: 
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      content-type: 
+      - text/html; charset=utf-8
+      server: 
+      - nginx/0.8.53
+      date: 
+      - Fri, 04 Mar 2011 08:33:05 GMT
+      x-runtime: 
+      - "0.009158"
+      status: 
+      - 404 Not Found
+      cache-control: 
+      - no-cache
+      transfer-encoding: 
+      - chunked
+    body: |
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta name="charset" content="utf-8" />
+        <title>envision - Kanbanery</title>
+      
+        <link rel="SHORTCUT ICON" href="http://kanbanery.com//favicon.ico" />
+      <link rel="icon" type="image/png" href="http://kanbanery.com//favicon.png" />
+      <link rel="apple-touch-icon" href="/images/iphone-icon.png" />
+      
+      
+        <link href="/assets/main.css?1299152942" media="all" rel="stylesheet" type="text/css" />
+      
+        <script type="text/javascript">
+          var Application = {};
+          Application.domain = "kanbanery.com";
+        </script>
+      
+        <script src="/assets/main.js?1299152941" type="text/javascript"></script>
+        <script src="/js/templates.js?1299152998" type="text/javascript"></script>
+      
+        <script type="text/javascript">
+          WEB_SOCKET_SWF_LOCATION = "/javascripts/vendor/web-socket-js/WebSocketMain.swf";
+        </script>
+      
+      
+      
+        <script type="text/javascript">
+          var initBoardData = [];
+        </script>
+      
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+      
+      </head>
+      <body>
+        <div id="header" class="clearfix">
+          <h1><a href="http://kanbanery.com/"><img alt="Kanbanery-logo-small" src="/images/kanbanery-logo-small.png?1299152746" /></a></h1>
+          <ul id="account">
+            <li><a href="http://support.kanbanery.com">Support</a></li>
+        <li><a href="https://kanbanery.com/login">Sign in</a></li>
+        <li><a href="http://kanbanery.com/pricing">Create an account</a></li>
+      
+          </ul>
+            <div id="flash"></div>
+        </div>
+      
+        <div id="content">
+          <div class="wrapper">
+      <h2>Not found: These aren't the droids you are looking for</h2>
+      
+      <img class="four04" src="/images/404.jpg" alt="These aren't the droids you're looking for" />
+      
+      <p>We're sorry but you apparently reached the page that never existed, has been moved or has not been found for any reason. Please <a href="javascript:history.back(-1);">go back</a>.</p>
+      </div>
+        </div>
+      
+        <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      
+        try {
+          var pageTracker = _gat._getTracker("UA-13022891-1");
+          pageTracker._setDomainName(".kanbanery.com");
+          pageTracker._trackPageview();
+        } catch(err) {}
+      </script>
+      
+      </body>
+      </html>
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: https://envision.kanbanery.com:443/api/v1/user/workspaces.json
+    body: 
+    headers: 
+      x-kanbanery-apitoken: 
+      - secret
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      etag: 
+      - "\"19f8716b8a535191f0014603f4a75ebe\""
+      content-type: 
+      - application/json; charset=utf-8
+      x-runtime: 
+      - "0.044214"
+      date: 
+      - Fri, 04 Mar 2011 08:33:09 GMT
+      server: 
+      - nginx/0.8.53
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      status: 
+      - 200 OK
+      transfer-encoding: 
+      - chunked
+    body: "[{\"id\":1394,\"created_at\":\"2010-10-19T11:29:31+00:00\",\"updated_at\":\"2010-10-19T11:29:31+00:00\",\"name\":\"envision\",\"type\":\"Workspace\",\"projects\":[{\"id\":2817,\"created_at\":\"2011-01-18T23:54:09+00:00\",\"updated_at\":\"2011-02-04T02:33:32+00:00\",\"name\":\"Envision Integration\",\"type\":\"Project\"}]}]"
+    http_version: "1.1"

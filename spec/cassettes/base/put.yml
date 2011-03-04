@@ -1,0 +1,96 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :put
+    uri: https://envision.kanbanery.com:443/api/v1/tasks/2.json
+    body: 
+    headers: 
+      x-kanbanery-apitoken: 
+      - secret
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 404
+      message: Not Found
+    headers: 
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      content-type: 
+      - application/json; charset=utf-8
+      server: 
+      - nginx/0.8.53
+      date: 
+      - Fri, 04 Mar 2011 09:32:57 GMT
+      x-runtime: 
+      - "0.027039"
+      status: 
+      - 404 Not Found
+      cache-control: 
+      - no-cache
+      transfer-encoding: 
+      - chunked
+    body: 404 Not Found
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :post
+    uri: https://envision.kanbanery.com:443/api/v1/projects/2817/tasks.json
+    body: task[title]=Testing&task[task_type_name]=Work%20Package
+    headers: 
+      x-kanbanery-apitoken: 
+      - secret
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 201
+      message: Created
+    headers: 
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      content-type: 
+      - application/json; charset=utf-8
+      x-runtime: 
+      - "0.281184"
+      date: 
+      - Fri, 04 Mar 2011 09:33:01 GMT
+      server: 
+      - nginx/0.8.53
+      cache-control: 
+      - no-cache
+      status: 
+      - 201 Created
+      transfer-encoding: 
+      - chunked
+    body: "{\"id\":37766,\"created_at\":\"2011-03-04T09:33:01+00:00\",\"updated_at\":\"2011-03-04T09:33:01+00:00\",\"title\":\"Testing\",\"description\":null,\"task_type_id\":15592,\"estimate_id\":null,\"column_id\":15090,\"creator_id\":2608,\"owner_id\":null,\"position\":31,\"priority\":null,\"ready_to_pull\":false,\"moved_at\":null,\"deadline\":null,\"blocked\":false,\"type\":\"Task\"}"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :put
+    uri: https://envision.kanbanery.com:443/api/v1/tasks/37766.json
+    body: task[title]=Testing123
+    headers: 
+      x-kanbanery-apitoken: 
+      - secret
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      etag: 
+      - "\"cdf5e550256defe660da2ad26af79eb6\""
+      content-type: 
+      - application/json; charset=utf-8
+      x-runtime: 
+      - "0.112208"
+      date: 
+      - Fri, 04 Mar 2011 09:33:05 GMT
+      server: 
+      - nginx/0.8.53
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      status: 
+      - 200 OK
+      transfer-encoding: 
+      - chunked
+    body: "{\"id\":37766,\"created_at\":\"2011-03-04T09:33:01+00:00\",\"updated_at\":\"2011-03-04T09:33:05+00:00\",\"title\":\"Testing123\",\"description\":null,\"task_type_id\":15592,\"estimate_id\":null,\"column_id\":15090,\"creator_id\":2608,\"owner_id\":null,\"position\":31,\"priority\":0,\"ready_to_pull\":false,\"moved_at\":null,\"deadline\":null,\"blocked\":false,\"type\":\"Task\"}"
+    http_version: "1.1"
