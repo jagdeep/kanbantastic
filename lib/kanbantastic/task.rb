@@ -1,7 +1,7 @@
 module Kanbantastic
 
   class Task < Base
-    attr_accessor :id, :title, :column_id, :updated_at, :moved_at, :task_type_id, :owner_id
+    attr_accessor :id, :title, :column_id, :updated_at, :created_at, :moved_at, :task_type_id, :owner_id
     validates_presence_of :config, :id, :title, :column_id, :updated_at, :task_type_id
 
     def initialize(config, options = {})
