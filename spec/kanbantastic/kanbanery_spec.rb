@@ -7,6 +7,7 @@ describe "Kanbanery time" do
     FakeWeb.allow_net_connect = "https://kanbanery.com/api/v1/test.json"
     http = Net::HTTP.new('kanbanery.com', 443)
     http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
     path = '/api/v1/test.json'
     resp, data = http.get(path, nil)
 
