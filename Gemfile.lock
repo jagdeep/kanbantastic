@@ -35,9 +35,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activemodel
   fakeweb
-  httparty
   kanbantastic!
   mocha
   rspec
