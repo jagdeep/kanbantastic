@@ -12,29 +12,29 @@
       code: 201
       message: Created
     headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      content-type: 
-      - application/json; charset=utf-8
-      x-runtime: 
-      - "0.201413"
-      date: 
-      - #{Time.now}
       server: 
       - nginx/0.8.53
-      cache-control: 
-      - no-cache
-      status: 
-      - 201 Created
+      date: 
+      - Sun, 06 Mar 2011 06:18:35 GMT
+      content-type: 
+      - application/json; charset=utf-8
       transfer-encoding: 
       - chunked
-    body: "{\"id\":36819,\"created_at\":\"2011-02-25T06:37:24+00:00\",\"updated_at\":\"2011-02-25T06:37:24+00:00\",\"title\":\"Test Task\",\"description\":null,\"task_type_id\":15592,\"estimate_id\":null,\"column_id\":15090,\"creator_id\":2608,\"owner_id\":null,\"position\":18,\"priority\":null,\"ready_to_pull\":false,\"moved_at\":null,\"deadline\":null,\"blocked\":false,\"type\":\"Task\"}"
+      status: 
+      - 201 Created
+      cache-control: 
+      - no-cache
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      x-runtime: 
+      - "0.238226"
+    body: "{\"id\":37898,\"created_at\":\"2011-03-06T06:18:34+00:00\",\"updated_at\":\"2011-03-06T06:18:34+00:00\",\"title\":\"Test Task\",\"description\":null,\"task_type_id\":15592,\"estimate_id\":null,\"column_id\":15090,\"creator_id\":2608,\"owner_id\":null,\"position\":41,\"priority\":null,\"ready_to_pull\":false,\"moved_at\":null,\"deadline\":null,\"blocked\":false,\"type\":\"Task\"}"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :put
-    uri: https://envision.kanbanery.com:443/api/v1/tasks/36819.json
-    body: task[owner_id]=&task[title]=New%20title
+    uri: https://envision.kanbanery.com:443/api/v1/tasks/37898.json
+    body: task[title]=New%20title&task[owner_id]=
     headers: 
       x-kanbanery-apitoken: 
       - secret
@@ -43,30 +43,30 @@
       code: 200
       message: OK
     headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"242b2b0d014690de17c7cdd043a86531\""
-      content-type: 
-      - application/json; charset=utf-8
-      x-runtime: 
-      - "0.139687"
-      date: 
-      - #{Time.now}
       server: 
       - nginx/0.8.53
-      cache-control: 
-      - max-age=0, private, must-revalidate
-      status: 
-      - 200 OK
+      date: 
+      - Sun, 06 Mar 2011 06:18:38 GMT
+      content-type: 
+      - application/json; charset=utf-8
       transfer-encoding: 
       - chunked
-    body: "{\"id\":36819,\"created_at\":\"2011-02-25T06:37:24+00:00\",\"updated_at\":\"2011-02-25T06:37:27+00:00\",\"title\":\"New title\",\"description\":null,\"task_type_id\":15592,\"estimate_id\":null,\"column_id\":15090,\"creator_id\":2608,\"owner_id\":null,\"position\":18,\"priority\":0,\"ready_to_pull\":false,\"moved_at\":null,\"deadline\":null,\"blocked\":false,\"type\":\"Task\"}"
+      status: 
+      - 200 OK
+      etag: 
+      - "\"30cf80af1504ef3b4ee4544d5a8294bc\""
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      x-runtime: 
+      - "0.140589"
+    body: "{\"id\":37898,\"created_at\":\"2011-03-06T06:18:34+00:00\",\"updated_at\":\"2011-03-06T06:18:38+00:00\",\"title\":\"New title\",\"description\":null,\"task_type_id\":15592,\"estimate_id\":null,\"column_id\":15090,\"creator_id\":2608,\"owner_id\":null,\"position\":41,\"priority\":0,\"ready_to_pull\":false,\"moved_at\":null,\"deadline\":null,\"blocked\":false,\"type\":\"Task\"}"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :get
-    uri: https://envision.kanbanery.com:443/api/v1/tasks/36819.json
+    uri: https://envision.kanbanery.com:443/api/v1/tasks/37898.json
     body: 
     headers: 
       x-kanbanery-apitoken: 
@@ -76,23 +76,23 @@
       code: 200
       message: OK
     headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"242b2b0d014690de17c7cdd043a86531\""
-      content-type: 
-      - application/json; charset=utf-8
-      x-runtime: 
-      - "0.056792"
-      date: 
-      - #{Time.now}
       server: 
       - nginx/0.8.53
-      cache-control: 
-      - max-age=0, private, must-revalidate
-      status: 
-      - 200 OK
+      date: 
+      - Sun, 06 Mar 2011 06:18:38 GMT
+      content-type: 
+      - application/json; charset=utf-8
       transfer-encoding: 
       - chunked
-    body: "{\"id\":36819,\"created_at\":\"2011-02-25T06:37:24+00:00\",\"updated_at\":\"2011-02-25T06:37:27+00:00\",\"title\":\"New title\",\"description\":null,\"task_type_id\":15592,\"estimate_id\":null,\"column_id\":15090,\"creator_id\":2608,\"owner_id\":null,\"position\":18,\"priority\":0,\"ready_to_pull\":false,\"moved_at\":null,\"deadline\":null,\"blocked\":false,\"type\":\"Task\"}"
+      status: 
+      - 200 OK
+      etag: 
+      - "\"30cf80af1504ef3b4ee4544d5a8294bc\""
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      x-runtime: 
+      - "0.056801"
+    body: "{\"id\":37898,\"created_at\":\"2011-03-06T06:18:34+00:00\",\"updated_at\":\"2011-03-06T06:18:38+00:00\",\"title\":\"New title\",\"description\":null,\"task_type_id\":15592,\"estimate_id\":null,\"column_id\":15090,\"creator_id\":2608,\"owner_id\":null,\"position\":41,\"priority\":0,\"ready_to_pull\":false,\"moved_at\":null,\"deadline\":null,\"blocked\":false,\"type\":\"Task\"}"
     http_version: "1.1"

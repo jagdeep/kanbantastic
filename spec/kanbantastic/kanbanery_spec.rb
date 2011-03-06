@@ -9,7 +9,7 @@ describe "Kanbanery time" do
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
     path = '/api/v1/test.json'
-    resp, data = http.get(path, nil)
+    resp = http.start {|h| h.request(Net::HTTP::Get.new(path))}
 
     Time.parse(resp.header['date']).utc.should_not > Time.now.utc
   end

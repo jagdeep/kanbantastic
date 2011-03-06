@@ -45,6 +45,9 @@ describe Kanbantastic::Task do
   end
 
   describe "update" do
+    # In the following cassette response['headers']['date'] must set to be same for each response for the test to pass.
+    # As we have implemented a fix for server time difference, the updated_at, created_at and moved_at will not be set correctly
+    # if response times are different.
     use_vcr_cassette "task/update"
 
     before do
