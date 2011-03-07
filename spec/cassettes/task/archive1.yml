@@ -15,7 +15,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Mon, 07 Mar 2011 07:31:57 GMT
+      - <%= Time.now.utc %>
       content-type: 
       - application/json; charset=utf-8
       transfer-encoding: 
@@ -46,7 +46,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Mon, 07 Mar 2011 07:32:01 GMT
+      - <%= Time.now.utc %>
       content-type: 
       - application/json; charset=utf-8
       transfer-encoding: 
@@ -79,7 +79,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Mon, 07 Mar 2011 07:32:05 GMT
+      - <%= Time.now.utc %>
       content-type: 
       - application/json; charset=utf-8
       transfer-encoding: 
@@ -112,7 +112,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Mon, 07 Mar 2011 07:32:10 GMT
+      - <%= Time.now.utc %>
       content-type: 
       - application/json; charset=utf-8
       transfer-encoding: 
@@ -145,7 +145,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Mon, 07 Mar 2011 07:32:15 GMT
+      - <%= Time.now.utc %>
       content-type: 
       - application/json; charset=utf-8
       transfer-encoding: 
@@ -178,7 +178,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Mon, 07 Mar 2011 07:32:20 GMT
+      - <%= Time.now.utc %>
       content-type: 
       - application/json; charset=utf-8
       transfer-encoding: 
@@ -211,7 +211,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Mon, 07 Mar 2011 07:32:25 GMT
+      - <%= Time.now.utc %>
       content-type: 
       - application/json; charset=utf-8
       transfer-encoding: 
@@ -244,7 +244,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Mon, 07 Mar 2011 07:32:29 GMT
+      - <%= Time.now.utc %>
       content-type: 
       - application/json; charset=utf-8
       transfer-encoding: 
@@ -277,7 +277,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Mon, 07 Mar 2011 07:32:33 GMT
+      - <%= Time.now.utc %>
       content-type: 
       - application/json; charset=utf-8
       transfer-encoding: 

@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Kanbantastic::Task do
 
   describe "find_task_type_id" do
-    use_vcr_cassette "cassette3"
+    use_vcr_cassette "cassette3", :erb => true
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -30,7 +30,7 @@ describe Kanbantastic::Task do
   end
 
   describe "create" do
-    use_vcr_cassette "task/create"
+    use_vcr_cassette "task/create", :erb => true
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -48,7 +48,7 @@ describe Kanbantastic::Task do
     # In the following cassette response['headers']['date'] must set to be same for each response for the test to pass.
     # As we have implemented a fix for server time difference, the updated_at, created_at and moved_at will not be set correctly
     # if response times are different.
-    use_vcr_cassette "task/update"
+    use_vcr_cassette "task/update", :erb => true
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -67,10 +67,15 @@ describe Kanbantastic::Task do
       kanbanery_task.title.should == @task.title
       kanbanery_task.updated_at.should == @task.updated_at
     end
+
+    it "should update the title" do
+      @task.update(:title => "New title").should be_true
+      @task.title.should == "New title"
+    end
   end
 
   describe "column" do
-    use_vcr_cassette "cassette6"
+    use_vcr_cassette "cassette6", :erb => true
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -94,7 +99,7 @@ describe Kanbantastic::Task do
   end
 
   describe "move_to_next_column" do
-    use_vcr_cassette "task/move_to_next_column"
+    use_vcr_cassette "task/move_to_next_column", :erb => true
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -115,7 +120,7 @@ describe Kanbantastic::Task do
   end
 
   describe "move_to_previous_column" do
-    use_vcr_cassette "task/move_to_previous_column"
+    use_vcr_cassette "task/move_to_previous_column", :erb => true
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -137,7 +142,7 @@ describe Kanbantastic::Task do
   end
 
   describe "move_to_first_column" do
-    use_vcr_cassette "task/move_to_first_column"
+    use_vcr_cassette "task/move_to_first_column", :erb => true
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -162,7 +167,7 @@ describe Kanbantastic::Task do
   end
 
   describe "move_to_second_column" do
-    use_vcr_cassette "task/move_to_second_column"
+    use_vcr_cassette "task/move_to_second_column", :erb => true
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -186,7 +191,7 @@ describe Kanbantastic::Task do
   end
 
   describe "move_to_last_column" do
-    use_vcr_cassette "task/move_to_last_column"
+    use_vcr_cassette "task/move_to_last_column", :erb => true
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -212,7 +217,7 @@ describe Kanbantastic::Task do
   describe "archive" do
 
     context "when task is in last column" do
-      use_vcr_cassette "task/archive1"
+      use_vcr_cassette "task/archive1", :erb => true
 
       before do
         @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -229,7 +234,7 @@ describe Kanbantastic::Task do
     end
 
     context "when task is not in last column" do
-      use_vcr_cassette "task/archive2"
+      use_vcr_cassette "task/archive2", :erb => true
 
       before do
         @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -244,23 +249,8 @@ describe Kanbantastic::Task do
     end
   end
 
-  describe "update" do
-    use_vcr_cassette "task/update"
-
-    before do
-      @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
-      @task = Kanbantastic::Task.create(@config, :title => 'Test Task', :task_type_name => 'Work Package')
-      @task.should be_valid
-    end
-
-    it "should update the title" do
-      @task.update(:title => "New title").should be_true
-      @task.title.should == "New title"
-    end
-  end
-
   describe "owner" do
-    use_vcr_cassette "task/owner"
+    use_vcr_cassette "task/owner", :erb => true
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -297,7 +287,7 @@ describe Kanbantastic::Task do
 
   describe "archived?" do
     context "when task is not archived" do
-      use_vcr_cassette "task/archived1"
+      use_vcr_cassette "task/archived1", :erb => true
 
       before do
         @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -312,7 +302,7 @@ describe Kanbantastic::Task do
     end
 
     context "when task is archived" do
-      use_vcr_cassette "task/archived2"
+      use_vcr_cassette "task/archived2", :erb => true
 
       before do
         @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -331,7 +321,7 @@ describe Kanbantastic::Task do
   end
 
   describe "find" do
-    use_vcr_cassette "task/find"
+    use_vcr_cassette "task/find", :erb => true
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -356,7 +346,7 @@ describe Kanbantastic::Task do
   end
 
   describe "all" do
-    use_vcr_cassette "task/all"
+    use_vcr_cassette "task/all", :erb => true
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -373,7 +363,7 @@ describe Kanbantastic::Task do
   end
 
   describe "update column_id" do
-    use_vcr_cassette "task/update_column_id"
+    use_vcr_cassette "task/update_column_id", :erb => true
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)

@@ -15,7 +15,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Mon, 07 Mar 2011 06:53:31 GMT
+      - <%= Time.now.utc %>
       content-type: 
       - application/json; charset=utf-8
       transfer-encoding: 
@@ -46,7 +46,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Mon, 07 Mar 2011 06:53:35 GMT
+      - <%= Time.now.utc %>
       content-type: 
       - application/json; charset=utf-8
       transfer-encoding: 
@@ -79,7 +79,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Mon, 07 Mar 2011 06:53:38 GMT
+      - <%= Time.now.utc %>
       content-type: 
       - application/json; charset=utf-8
       transfer-encoding: 
@@ -112,7 +112,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Mon, 07 Mar 2011 06:53:42 GMT
+      - <%= Time.now.utc %>
       content-type: 
       - application/json; charset=utf-8
       transfer-encoding: 

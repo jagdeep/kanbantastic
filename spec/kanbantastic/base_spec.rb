@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Kanbantastic::Base do
 
   describe "find_project_id" do
-    use_vcr_cassette "workspaces_with_projects"
+    use_vcr_cassette "workspaces_with_projects", :erb => true
 
     it "should project id for valid project name" do
       Kanbantastic::Base.find_project_id("Envision Integration", WORKSPACE, API_KEY).should == PROJECT_ID
@@ -52,7 +52,7 @@ describe Kanbantastic::Base do
   end
 
   describe "post" do
-    use_vcr_cassette "base/post"
+    use_vcr_cassette "base/post", :erb => true
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -80,7 +80,7 @@ describe Kanbantastic::Base do
   end
 
   describe "get" do
-    use_vcr_cassette "base/get"
+    use_vcr_cassette "base/get", :erb => true
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -108,7 +108,7 @@ describe Kanbantastic::Base do
   end
 
   describe "put" do
-    use_vcr_cassette "base/put"
+    use_vcr_cassette "base/put", :erb => true
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -146,21 +146,21 @@ describe Kanbantastic::Base do
     end
 
     it "should fix updated_at, created_at and moved_at when time is set in future" do
-      future_time = Time.now.utc + 9000
+      future_time = Time.now.utc + 1
       response = {:created_at => future_time, :updated_at => future_time, :moved_at => future_time}
       response = Kanbantastic::Base.send("rectify_time", response, future_time)
-      response[:created_at].should == (future_time - 9000)
-      response[:updated_at].should == (future_time - 9000)
-      response[:moved_at].should == (future_time - 9000)
+      response[:created_at].should == (future_time - 1)
+      response[:updated_at].should == (future_time - 1)
+      response[:moved_at].should == (future_time - 1)
     end
 
     it "should fix updated_at, created_at and moved_at when time is set in past" do
-      past_time = Time.now.utc - 9000
+      past_time = Time.now.utc - 1
       response = {:created_at => past_time, :updated_at => past_time, :moved_at => past_time}
       response = Kanbantastic::Base.send("rectify_time", response, past_time)
-      response[:created_at].should == (past_time + 9000)
-      response[:updated_at].should == (past_time + 9000)
-      response[:moved_at].should == (past_time + 9000)
+      response[:created_at].should == (past_time + 1)
+      response[:updated_at].should == (past_time + 1)
+      response[:moved_at].should == (past_time + 1)
     end
   end
 end

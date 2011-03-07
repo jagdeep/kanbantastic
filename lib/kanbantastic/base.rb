@@ -93,6 +93,7 @@ module Kanbantastic
 
     def self.rectify_time response, time
       diff = Time.now.utc.to_i - time.utc.to_i
+      raise "Kanbanery server has a time difference of #{diff} seconds" if diff > 1
       if response.class == Array
         response.each{|r| RECTIFY_TIME_FOR.each{|k| (r[k] += diff) if r[k]}}
       else

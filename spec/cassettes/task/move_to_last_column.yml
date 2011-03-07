@@ -19,7 +19,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:39:24 GMT
+      - <%= Time.now.utc %>
       x-runtime: 
       - "0.212343"
       status: 
@@ -52,7 +52,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:39:26 GMT
+      - <%= Time.now.utc %>
       x-runtime: 
       - "0.042904"
       status: 
@@ -85,7 +85,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:39:29 GMT
+      - <%= Time.now.utc %>
       x-runtime: 
       - "0.166840"
       status: 
@@ -118,7 +118,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:39:32 GMT
+      - <%= Time.now.utc %>
       x-runtime: 
       - "0.046040"
       status: 
@@ -151,7 +151,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:39:35 GMT
+      - <%= Time.now.utc %>
       x-runtime: 
       - "0.305771"
       status: 
@@ -184,7 +184,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:39:38 GMT
+      - <%= Time.now.utc %>
       x-runtime: 
       - "0.425017"
       status: 
@@ -217,7 +217,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:39:41 GMT
+      - <%= Time.now.utc %>
       x-runtime: 
       - "0.068351"
       status: 
@@ -250,7 +250,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:39:44 GMT
+      - <%= Time.now.utc %>
       x-runtime: 
       - "0.052745"
       status: 
@@ -283,7 +283,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:39:47 GMT
+      - <%= Time.now.utc %>
       x-runtime: 
       - "0.053941"
       status: 
@@ -316,7 +316,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:39:50 GMT
+      - <%= Time.now.utc %>
       x-runtime: 
       - "0.307393"
       status: 
@@ -349,7 +349,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:39:53 GMT
+      - <%= Time.now.utc %>
       x-runtime: 
       - "0.042644"
       status: 
@@ -382,7 +382,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:39:56 GMT
+      - <%= Time.now.utc %>
       x-runtime: 
       - "0.047152"
       status: 
@@ -415,7 +415,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:39:59 GMT
+      - <%= Time.now.utc %>
       x-runtime: 
       - "0.223371"
       status: 
@@ -448,7 +448,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:40:02 GMT
+      - <%= Time.now.utc %>
       x-runtime: 
       - "0.061713"
       status: 
@@ -479,7 +479,7 @@
       x-runtime: 
       - "0.007502"
       date: 
-      - Fri, 25 Feb 2011 06:40:05 GMT
+      - <%= Time.now.utc %>
       server: 
       - nginx/0.8.53
       cache-control: 

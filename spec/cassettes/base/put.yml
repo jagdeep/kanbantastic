@@ -19,7 +19,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 04 Mar 2011 09:32:57 GMT
+      - <%= Time.now.utc %>
       x-runtime: 
       - "0.027039"
       status: 
@@ -50,7 +50,7 @@
       x-runtime: 
       - "0.281184"
       date: 
-      - Fri, 04 Mar 2011 09:33:01 GMT
+      - <%= Time.now.utc %>
       server: 
       - nginx/0.8.53
       cache-control: 
@@ -83,7 +83,7 @@
       x-runtime: 
       - "0.112208"
       date: 
-      - Fri, 04 Mar 2011 09:33:05 GMT
+      - <%= Time.now.utc %>
       server: 
       - nginx/0.8.53
       cache-control: 

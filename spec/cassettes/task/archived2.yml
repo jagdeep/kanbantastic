@@ -15,7 +15,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Mon, 07 Mar 2011 07:29:31 GMT
+      - <%= Time.now.utc %>
       content-type: 
       - application/json; charset=utf-8
       transfer-encoding: 
@@ -46,7 +46,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Mon, 07 Mar 2011 07:29:34 GMT
+      - <%= Time.now.utc %>
       content-type: 
       - application/json; charset=utf-8
       transfer-encoding: 
@@ -79,7 +79,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Mon, 07 Mar 2011 07:29:38 GMT
+      - <%= Time.now.utc %>
       content-type: 
       - application/json; charset=utf-8
       transfer-encoding: 
@@ -112,7 +112,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Mon, 07 Mar 2011 07:29:42 GMT
+      - <%= Time.now.utc %>
       content-type: 
       - application/json; charset=utf-8
       transfer-encoding: 
@@ -145,7 +145,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Mon, 07 Mar 2011 07:29:45 GMT
+      - <%= Time.now.utc %>
       content-type: 
       - application/json; charset=utf-8
       transfer-encoding: 
@@ -178,7 +178,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Mon, 07 Mar 2011 07:29:49 GMT
+      - <%= Time.now.utc %>
       content-type: 
       - application/json; charset=utf-8
       transfer-encoding: 
@@ -211,7 +211,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Mon, 07 Mar 2011 07:29:53 GMT
+      - <%= Time.now.utc %>
       content-type: 
       - application/json; charset=utf-8
       transfer-encoding: 
@@ -244,7 +244,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Mon, 07 Mar 2011 07:29:57 GMT
+      - <%= Time.now.utc %>
       content-type: 
       - application/json; charset=utf-8
       transfer-encoding: 
@@ -277,7 +277,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Mon, 07 Mar 2011 07:30:01 GMT
+      - <%= Time.now.utc %>
       content-type: 
       - application/json; charset=utf-8
       transfer-encoding: 
@@ -310,7 +310,7 @@
       server: 
       - nginx/0.8.53
       date: 
-      - Mon, 07 Mar 2011 07:30:05 GMT
+      - <%= Time.now.utc %>
       content-type: 
       - application/json; charset=utf-8
       transfer-encoding: 
