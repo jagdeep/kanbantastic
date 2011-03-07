@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    kanbantastic (0.1.0)
+    kanbantastic (0.1.1)
       activemodel
       httparty
 
