@@ -12,23 +12,23 @@
       code: 201
       message: Created
     headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      content-type: 
-      - application/json; charset=utf-8
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:38:14 GMT
-      x-runtime: 
-      - "0.385636"
+      - Mon, 07 Mar 2011 07:32:47 GMT
+      content-type: 
+      - application/json; charset=utf-8
+      transfer-encoding: 
+      - chunked
       status: 
       - 201 Created
       cache-control: 
       - no-cache
-      transfer-encoding: 
-      - chunked
-    body: "{\"id\":36823,\"created_at\":\"2011-02-25T06:38:14+00:00\",\"updated_at\":\"2011-02-25T06:38:14+00:00\",\"title\":\"Test Task\",\"description\":null,\"task_type_id\":15592,\"estimate_id\":null,\"column_id\":15090,\"creator_id\":2608,\"owner_id\":null,\"position\":21,\"priority\":null,\"ready_to_pull\":false,\"moved_at\":null,\"deadline\":null,\"blocked\":false,\"type\":\"Task\"}"
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      x-runtime: 
+      - "0.212688"
+    body: "{\"id\":37954,\"created_at\":\"2011-03-07T07:32:47+00:00\",\"updated_at\":\"2011-03-07T07:32:47+00:00\",\"title\":\"Test Task\",\"description\":null,\"task_type_id\":15592,\"estimate_id\":null,\"column_id\":15090,\"creator_id\":2608,\"owner_id\":null,\"position\":42,\"priority\":null,\"ready_to_pull\":false,\"moved_at\":null,\"deadline\":null,\"blocked\":false,\"type\":\"Task\"}"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
@@ -43,31 +43,31 @@
       code: 200
       message: OK
     headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"d1121ce95abe358a3d246bd6bd39d641\""
-      content-type: 
-      - application/json; charset=utf-8
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:38:17 GMT
-      x-runtime: 
-      - "0.042818"
-      status: 
-      - 200 OK
-      cache-control: 
-      - max-age=0, private, must-revalidate
+      - Mon, 07 Mar 2011 07:32:50 GMT
+      content-type: 
+      - application/json; charset=utf-8
       transfer-encoding: 
       - chunked
+      status: 
+      - 200 OK
+      etag: 
+      - "\"d1121ce95abe358a3d246bd6bd39d641\""
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      x-runtime: 
+      - "0.043381"
     body: "[{\"id\":15090,\"created_at\":\"2011-01-18T23:54:09+00:00\",\"updated_at\":\"2011-01-18T23:58:04+00:00\",\"type\":\"Column\",\"project_id\":2817,\"name\":\"Ready\",\"capacity\":null,\"fixed\":true,\"position\":1},{\"id\":15092,\"created_at\":\"2011-01-18T23:57:54+00:00\",\"updated_at\":\"2011-01-18T23:57:54+00:00\",\"type\":\"Column\",\"project_id\":2817,\"name\":\"WIP\",\"capacity\":null,\"fixed\":false,\"position\":2},{\"id\":15091,\"created_at\":\"2011-01-18T23:54:09+00:00\",\"updated_at\":\"2011-01-18T23:54:09+00:00\",\"type\":\"Column\",\"project_id\":2817,\"name\":\"Done\",\"capacity\":null,\"fixed\":true,\"position\":3}]"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :put
-    uri: https://envision.kanbanery.com:443/api/v1/tasks/36823.json
-    body: task[owner_id]=&task[location]=next_column
+    uri: https://envision.kanbanery.com:443/api/v1/tasks/37954.json
+    body: task[column_id]=15092&task[position]=&task[owner_id]=
     headers: 
       x-kanbanery-apitoken: 
       - secret
@@ -76,25 +76,25 @@
       code: 200
       message: OK
     headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"489d646329e3aab42570295e31f2aa9a\""
-      content-type: 
-      - application/json; charset=utf-8
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:38:20 GMT
-      x-runtime: 
-      - "0.248633"
-      status: 
-      - 200 OK
-      cache-control: 
-      - max-age=0, private, must-revalidate
+      - Mon, 07 Mar 2011 07:32:54 GMT
+      content-type: 
+      - application/json; charset=utf-8
       transfer-encoding: 
       - chunked
-    body: "{\"id\":36823,\"created_at\":\"2011-02-25T06:38:14+00:00\",\"updated_at\":\"2011-02-25T06:38:20+00:00\",\"title\":\"Test Task\",\"description\":null,\"task_type_id\":15592,\"estimate_id\":null,\"column_id\":15092,\"creator_id\":2608,\"owner_id\":2608,\"position\":7,\"priority\":0,\"ready_to_pull\":false,\"moved_at\":\"2011-02-25T06:38:20+00:00\",\"deadline\":null,\"blocked\":false,\"type\":\"Task\"}"
+      status: 
+      - 200 OK
+      etag: 
+      - "\"f9020660031ccb592b2bb0aee57079b2\""
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      x-runtime: 
+      - "0.226401"
+    body: "{\"id\":37954,\"created_at\":\"2011-03-07T07:32:47+00:00\",\"updated_at\":\"2011-03-07T07:32:54+00:00\",\"title\":\"Test Task\",\"description\":null,\"task_type_id\":15592,\"estimate_id\":null,\"column_id\":15092,\"creator_id\":2608,\"owner_id\":2608,\"position\":4,\"priority\":0,\"ready_to_pull\":false,\"moved_at\":\"2011-03-07T07:32:54+00:00\",\"deadline\":null,\"blocked\":false,\"type\":\"Task\"}"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
@@ -109,31 +109,31 @@
       code: 200
       message: OK
     headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"d1121ce95abe358a3d246bd6bd39d641\""
-      content-type: 
-      - application/json; charset=utf-8
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:38:22 GMT
-      x-runtime: 
-      - "0.055521"
-      status: 
-      - 200 OK
-      cache-control: 
-      - max-age=0, private, must-revalidate
+      - Mon, 07 Mar 2011 07:32:58 GMT
+      content-type: 
+      - application/json; charset=utf-8
       transfer-encoding: 
       - chunked
+      status: 
+      - 200 OK
+      etag: 
+      - "\"d1121ce95abe358a3d246bd6bd39d641\""
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      x-runtime: 
+      - "0.121600"
     body: "[{\"id\":15090,\"created_at\":\"2011-01-18T23:54:09+00:00\",\"updated_at\":\"2011-01-18T23:58:04+00:00\",\"type\":\"Column\",\"project_id\":2817,\"name\":\"Ready\",\"capacity\":null,\"fixed\":true,\"position\":1},{\"id\":15092,\"created_at\":\"2011-01-18T23:57:54+00:00\",\"updated_at\":\"2011-01-18T23:57:54+00:00\",\"type\":\"Column\",\"project_id\":2817,\"name\":\"WIP\",\"capacity\":null,\"fixed\":false,\"position\":2},{\"id\":15091,\"created_at\":\"2011-01-18T23:54:09+00:00\",\"updated_at\":\"2011-01-18T23:54:09+00:00\",\"type\":\"Column\",\"project_id\":2817,\"name\":\"Done\",\"capacity\":null,\"fixed\":true,\"position\":3}]"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :put
-    uri: https://envision.kanbanery.com:443/api/v1/tasks/36823.json
-    body: task[owner_id]=2608&task[location]=prev_column
+    uri: https://envision.kanbanery.com:443/api/v1/tasks/37954.json
+    body: task[column_id]=15090&task[position]=&task[owner_id]=2608
     headers: 
       x-kanbanery-apitoken: 
       - secret
@@ -142,25 +142,25 @@
       code: 200
       message: OK
     headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"626044d866b4981b6b4fe3d40c38f0c0\""
-      content-type: 
-      - application/json; charset=utf-8
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:38:26 GMT
-      x-runtime: 
-      - "0.225452"
-      status: 
-      - 200 OK
-      cache-control: 
-      - max-age=0, private, must-revalidate
+      - Mon, 07 Mar 2011 07:33:02 GMT
+      content-type: 
+      - application/json; charset=utf-8
       transfer-encoding: 
       - chunked
-    body: "{\"id\":36823,\"created_at\":\"2011-02-25T06:38:14+00:00\",\"updated_at\":\"2011-02-25T06:38:26+00:00\",\"title\":\"Test Task\",\"description\":null,\"task_type_id\":15592,\"estimate_id\":null,\"column_id\":15090,\"creator_id\":2608,\"owner_id\":2608,\"position\":21,\"priority\":0,\"ready_to_pull\":false,\"moved_at\":\"2011-02-25T06:38:26+00:00\",\"deadline\":null,\"blocked\":false,\"type\":\"Task\"}"
+      status: 
+      - 200 OK
+      etag: 
+      - "\"8cdd480d21f0b22b23ec58a0164ddb6f\""
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      x-runtime: 
+      - "0.348281"
+    body: "{\"id\":37954,\"created_at\":\"2011-03-07T07:32:47+00:00\",\"updated_at\":\"2011-03-07T07:33:01+00:00\",\"title\":\"Test Task\",\"description\":null,\"task_type_id\":15592,\"estimate_id\":null,\"column_id\":15090,\"creator_id\":2608,\"owner_id\":2608,\"position\":42,\"priority\":0,\"ready_to_pull\":false,\"moved_at\":\"2011-03-07T07:33:01+00:00\",\"deadline\":null,\"blocked\":false,\"type\":\"Task\"}"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
@@ -175,24 +175,24 @@
       code: 200
       message: OK
     headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"d1121ce95abe358a3d246bd6bd39d641\""
-      content-type: 
-      - application/json; charset=utf-8
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:38:28 GMT
-      x-runtime: 
-      - "0.065034"
-      status: 
-      - 200 OK
-      cache-control: 
-      - max-age=0, private, must-revalidate
+      - Mon, 07 Mar 2011 07:33:05 GMT
+      content-type: 
+      - application/json; charset=utf-8
       transfer-encoding: 
       - chunked
+      status: 
+      - 200 OK
+      etag: 
+      - "\"d1121ce95abe358a3d246bd6bd39d641\""
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      x-runtime: 
+      - "0.043586"
     body: "[{\"id\":15090,\"created_at\":\"2011-01-18T23:54:09+00:00\",\"updated_at\":\"2011-01-18T23:58:04+00:00\",\"type\":\"Column\",\"project_id\":2817,\"name\":\"Ready\",\"capacity\":null,\"fixed\":true,\"position\":1},{\"id\":15092,\"created_at\":\"2011-01-18T23:57:54+00:00\",\"updated_at\":\"2011-01-18T23:57:54+00:00\",\"type\":\"Column\",\"project_id\":2817,\"name\":\"WIP\",\"capacity\":null,\"fixed\":false,\"position\":2},{\"id\":15091,\"created_at\":\"2011-01-18T23:54:09+00:00\",\"updated_at\":\"2011-01-18T23:54:09+00:00\",\"type\":\"Column\",\"project_id\":2817,\"name\":\"Done\",\"capacity\":null,\"fixed\":true,\"position\":3}]"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
@@ -208,31 +208,31 @@
       code: 200
       message: OK
     headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"d1121ce95abe358a3d246bd6bd39d641\""
-      content-type: 
-      - application/json; charset=utf-8
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:38:31 GMT
-      x-runtime: 
-      - "0.041142"
-      status: 
-      - 200 OK
-      cache-control: 
-      - max-age=0, private, must-revalidate
+      - Mon, 07 Mar 2011 07:33:08 GMT
+      content-type: 
+      - application/json; charset=utf-8
       transfer-encoding: 
       - chunked
+      status: 
+      - 200 OK
+      etag: 
+      - "\"d1121ce95abe358a3d246bd6bd39d641\""
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      x-runtime: 
+      - "0.049390"
     body: "[{\"id\":15090,\"created_at\":\"2011-01-18T23:54:09+00:00\",\"updated_at\":\"2011-01-18T23:58:04+00:00\",\"type\":\"Column\",\"project_id\":2817,\"name\":\"Ready\",\"capacity\":null,\"fixed\":true,\"position\":1},{\"id\":15092,\"created_at\":\"2011-01-18T23:57:54+00:00\",\"updated_at\":\"2011-01-18T23:57:54+00:00\",\"type\":\"Column\",\"project_id\":2817,\"name\":\"WIP\",\"capacity\":null,\"fixed\":false,\"position\":2},{\"id\":15091,\"created_at\":\"2011-01-18T23:54:09+00:00\",\"updated_at\":\"2011-01-18T23:54:09+00:00\",\"type\":\"Column\",\"project_id\":2817,\"name\":\"Done\",\"capacity\":null,\"fixed\":true,\"position\":3}]"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :put
-    uri: https://envision.kanbanery.com:443/api/v1/tasks/36823.json
-    body: task[owner_id]=2608&task[location]=next_column
+    uri: https://envision.kanbanery.com:443/api/v1/tasks/37954.json
+    body: task[column_id]=15091&task[position]=&task[owner_id]=2608
     headers: 
       x-kanbanery-apitoken: 
       - secret
@@ -241,58 +241,25 @@
       code: 200
       message: OK
     headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"323d62f6549e623cfc05fb4f1c3bbf5a\""
-      content-type: 
-      - application/json; charset=utf-8
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:38:34 GMT
-      x-runtime: 
-      - "0.226033"
-      status: 
-      - 200 OK
-      cache-control: 
-      - max-age=0, private, must-revalidate
-      transfer-encoding: 
-      - chunked
-    body: "{\"id\":36823,\"created_at\":\"2011-02-25T06:38:14+00:00\",\"updated_at\":\"2011-02-25T06:38:34+00:00\",\"title\":\"Test Task\",\"description\":null,\"task_type_id\":15592,\"estimate_id\":null,\"column_id\":15092,\"creator_id\":2608,\"owner_id\":2608,\"position\":7,\"priority\":0,\"ready_to_pull\":false,\"moved_at\":\"2011-02-25T06:38:34+00:00\",\"deadline\":null,\"blocked\":false,\"type\":\"Task\"}"
-    http_version: "1.1"
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
-    method: :put
-    uri: https://envision.kanbanery.com:443/api/v1/tasks/36823.json
-    body: task[owner_id]=2608&task[location]=next_column
-    headers: 
-      x-kanbanery-apitoken: 
-      - secret
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
-      code: 200
-      message: OK
-    headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"207cd66fb3a3b8a3bd98a88daa2317ef\""
+      - Mon, 07 Mar 2011 07:33:13 GMT
       content-type: 
       - application/json; charset=utf-8
-      server: 
-      - nginx/0.8.53
-      date: 
-      - Fri, 25 Feb 2011 06:38:38 GMT
-      x-runtime: 
-      - "0.260025"
-      status: 
-      - 200 OK
-      cache-control: 
-      - max-age=0, private, must-revalidate
       transfer-encoding: 
       - chunked
-    body: "{\"id\":36823,\"created_at\":\"2011-02-25T06:38:14+00:00\",\"updated_at\":\"2011-02-25T06:38:37+00:00\",\"title\":\"Test Task\",\"description\":null,\"task_type_id\":15592,\"estimate_id\":null,\"column_id\":15091,\"creator_id\":2608,\"owner_id\":2608,\"position\":7,\"priority\":0,\"ready_to_pull\":false,\"moved_at\":\"2011-02-25T06:38:37+00:00\",\"deadline\":null,\"blocked\":false,\"type\":\"Task\"}"
+      status: 
+      - 200 OK
+      etag: 
+      - "\"fd82cb5a0a77e43c075b7add8fc76fb6\""
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      x-runtime: 
+      - "0.251536"
+    body: "{\"id\":37954,\"created_at\":\"2011-03-07T07:32:47+00:00\",\"updated_at\":\"2011-03-07T07:33:13+00:00\",\"title\":\"Test Task\",\"description\":null,\"task_type_id\":15592,\"estimate_id\":null,\"column_id\":15091,\"creator_id\":2608,\"owner_id\":2608,\"position\":18,\"priority\":0,\"ready_to_pull\":false,\"moved_at\":\"2011-03-07T07:33:13+00:00\",\"deadline\":null,\"blocked\":false,\"type\":\"Task\"}"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
@@ -307,31 +274,31 @@
       code: 200
       message: OK
     headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"d1121ce95abe358a3d246bd6bd39d641\""
-      content-type: 
-      - application/json; charset=utf-8
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:38:40 GMT
-      x-runtime: 
-      - "0.043957"
-      status: 
-      - 200 OK
-      cache-control: 
-      - max-age=0, private, must-revalidate
+      - Mon, 07 Mar 2011 07:33:17 GMT
+      content-type: 
+      - application/json; charset=utf-8
       transfer-encoding: 
       - chunked
+      status: 
+      - 200 OK
+      etag: 
+      - "\"d1121ce95abe358a3d246bd6bd39d641\""
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      x-runtime: 
+      - "0.053797"
     body: "[{\"id\":15090,\"created_at\":\"2011-01-18T23:54:09+00:00\",\"updated_at\":\"2011-01-18T23:58:04+00:00\",\"type\":\"Column\",\"project_id\":2817,\"name\":\"Ready\",\"capacity\":null,\"fixed\":true,\"position\":1},{\"id\":15092,\"created_at\":\"2011-01-18T23:57:54+00:00\",\"updated_at\":\"2011-01-18T23:57:54+00:00\",\"type\":\"Column\",\"project_id\":2817,\"name\":\"WIP\",\"capacity\":null,\"fixed\":false,\"position\":2},{\"id\":15091,\"created_at\":\"2011-01-18T23:54:09+00:00\",\"updated_at\":\"2011-01-18T23:54:09+00:00\",\"type\":\"Column\",\"project_id\":2817,\"name\":\"Done\",\"capacity\":null,\"fixed\":true,\"position\":3}]"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :put
-    uri: https://envision.kanbanery.com:443/api/v1/tasks/36823.json
-    body: task[owner_id]=2608&task[location]=prev_column
+    uri: https://envision.kanbanery.com:443/api/v1/tasks/37954.json
+    body: task[column_id]=15090&task[position]=&task[owner_id]=2608
     headers: 
       x-kanbanery-apitoken: 
       - secret
@@ -340,64 +307,31 @@
       code: 200
       message: OK
     headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"afd3dc36acb20486aa9c09f9e100b38a\""
-      content-type: 
-      - application/json; charset=utf-8
       server: 
       - nginx/0.8.53
       date: 
-      - Fri, 25 Feb 2011 06:38:44 GMT
-      x-runtime: 
-      - "0.234203"
-      status: 
-      - 200 OK
-      cache-control: 
-      - max-age=0, private, must-revalidate
-      transfer-encoding: 
-      - chunked
-    body: "{\"id\":36823,\"created_at\":\"2011-02-25T06:38:14+00:00\",\"updated_at\":\"2011-02-25T06:38:43+00:00\",\"title\":\"Test Task\",\"description\":null,\"task_type_id\":15592,\"estimate_id\":null,\"column_id\":15092,\"creator_id\":2608,\"owner_id\":2608,\"position\":7,\"priority\":0,\"ready_to_pull\":false,\"moved_at\":\"2011-02-25T06:38:43+00:00\",\"deadline\":null,\"blocked\":false,\"type\":\"Task\"}"
-    http_version: "1.1"
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
-    method: :put
-    uri: https://envision.kanbanery.com:443/api/v1/tasks/36823.json
-    body: task[owner_id]=2608&task[location]=prev_column
-    headers: 
-      x-kanbanery-apitoken: 
-      - secret
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
-      code: 200
-      message: OK
-    headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"cb5afc29aa840f2c6231ecc8d45049a9\""
+      - Mon, 07 Mar 2011 07:33:21 GMT
       content-type: 
       - application/json; charset=utf-8
-      server: 
-      - nginx/0.8.53
-      date: 
-      - Fri, 25 Feb 2011 06:38:47 GMT
-      x-runtime: 
-      - "0.236523"
-      status: 
-      - 200 OK
-      cache-control: 
-      - max-age=0, private, must-revalidate
       transfer-encoding: 
       - chunked
-    body: "{\"id\":36823,\"created_at\":\"2011-02-25T06:38:14+00:00\",\"updated_at\":\"2011-02-25T06:38:47+00:00\",\"title\":\"Test Task\",\"description\":null,\"task_type_id\":15592,\"estimate_id\":null,\"column_id\":15090,\"creator_id\":2608,\"owner_id\":2608,\"position\":21,\"priority\":0,\"ready_to_pull\":false,\"moved_at\":\"2011-02-25T06:38:47+00:00\",\"deadline\":null,\"blocked\":false,\"type\":\"Task\"}"
+      status: 
+      - 200 OK
+      etag: 
+      - "\"b8554e2278dfbafe900ee4a1c85e0bdb\""
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      x-runtime: 
+      - "0.280510"
+    body: "{\"id\":37954,\"created_at\":\"2011-03-07T07:32:47+00:00\",\"updated_at\":\"2011-03-07T07:33:21+00:00\",\"title\":\"Test Task\",\"description\":null,\"task_type_id\":15592,\"estimate_id\":null,\"column_id\":15090,\"creator_id\":2608,\"owner_id\":2608,\"position\":42,\"priority\":0,\"ready_to_pull\":false,\"moved_at\":\"2011-03-07T07:33:21+00:00\",\"deadline\":null,\"blocked\":false,\"type\":\"Task\"}"
     http_version: "1.1"
 - !ruby/struct:VCR::HTTPInteraction 
   request: !ruby/struct:VCR::Request 
     method: :put
     uri: https://envision.kanbanery.com:443/api/v1/tasks/.json
-    body: task[owner_id]=2608&task[location]=prev_column
+    body: task[column_id]=15090&task[position]=&task[owner_id]=2608
     headers: 
       x-kanbanery-apitoken: 
       - secret
@@ -406,54 +340,66 @@
       code: 404
       message: Not Found
     headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      content-type: 
-      - text/html; charset=utf-8
-      x-runtime: 
-      - "0.005949"
-      date: 
-      - Fri, 25 Feb 2011 06:38:50 GMT
       server: 
       - nginx/0.8.53
-      cache-control: 
-      - no-cache
-      status: 
-      - 404 Not Found
+      date: 
+      - Mon, 07 Mar 2011 07:33:25 GMT
+      content-type: 
+      - text/html; charset=utf-8
       transfer-encoding: 
       - chunked
+      status: 
+      - 404 Not Found
+      cache-control: 
+      - no-cache
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      x-runtime: 
+      - "0.078594"
     body: |
-      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+      <!DOCTYPE html>
+      <html>
       <head>
+        <meta name="charset" content="utf-8" />
         <title>envision - Kanbanery</title>
-        <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
-        <link rel="SHORTCUT ICON" href="http://kanbanery.com/favicon.ico" />
-        <link rel="icon" type="image/png" href="http://kanbanery.com/favicon.png" />
-        <link rel="apple-touch-icon" href="/images/iphone-icon.png" />
+      
+        <link rel="SHORTCUT ICON" href="http://kanbanery.com//favicon.ico" />
+      <link rel="icon" type="image/png" href="http://kanbanery.com//favicon.png" />
+      <link rel="apple-touch-icon" href="/images/iphone-icon.png" />
+      
+      
+        <link href="/assets/main.css?1299152942" media="all" rel="stylesheet" type="text/css" />
+      
         <script type="text/javascript">
           var Application = {};
           Application.domain = "kanbanery.com";
         </script>
-        <link href="/assets/main.css?1298034088" media="all" rel="stylesheet" type="text/css" />
-        <script src="/assets/main.js?1298034088" type="text/javascript"></script>
-        <script src="/js/templates.js?1298034181" type="text/javascript"></script>
+      
+        <script src="/assets/main.js?1299152941" type="text/javascript"></script>
+        <script src="/js/templates.js?1299152998" type="text/javascript"></script>
+      
         <script type="text/javascript">
           WEB_SOCKET_SWF_LOCATION = "/javascripts/vendor/web-socket-js/WebSocketMain.swf";
         </script>
+      
         
+      
         <script type="text/javascript">
           var initBoardData = [];
         </script>
+      
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+      
       </head>
       <body>
         <div id="header" class="clearfix">
-          <h1><a href="http://kanbanery.com"><img alt="Kanbanery-logo-small" src="/images/kanbanery-logo-small.png?1298034021" /></a></h1>
+          <h1><a href="http://kanbanery.com/"><img alt="Kanbanery-logo-small" src="/images/kanbanery-logo-small.png?1299152746" /></a></h1>
           <ul id="account">
             <li><a href="http://support.kanbanery.com">Support</a></li>
-        <li><a href="/login">Sign in</a></li>
-        <li><a href="/pricing">Create an account</a></li>
+        <li><a href="https://kanbanery.com/login">Sign in</a></li>
+        <li><a href="http://kanbanery.com/pricing">Create an account</a></li>
       
           </ul>
             <div id="flash"></div>

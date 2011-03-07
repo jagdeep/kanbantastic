@@ -312,7 +312,7 @@ describe Kanbantastic::Task do
     end
 
     context "when task is archived" do
-      use_vcr_cassette "task/archived12"
+      use_vcr_cassette "task/archived2"
 
       before do
         @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -356,7 +356,7 @@ describe Kanbantastic::Task do
   end
 
   describe "all" do
-    use_vcr_cassette "task/all", :record => :new_episodes
+    use_vcr_cassette "task/all"
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -369,6 +369,22 @@ describe Kanbantastic::Task do
       tasks.class.should == Array
       tasks.first.class.should == Kanbantastic::Task
       tasks.select{|t| t.id == @task.id}.first.should_not be_nil
+    end
+  end
+
+  describe "update column_id" do
+    use_vcr_cassette "task/update_column_id"
+
+    before do
+      @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
+      @task = Kanbantastic::Task.create(@config, :title => 'Test Task 123', :task_type_name => 'Work Package')
+      @task.should be_valid
+    end
+
+    it "should update column id and move task to the last position in the new column" do
+      column = Kanbantastic::Column.all(@config).last
+      @task.update(:column_id => column.id, :position => nil)
+      @task.column.should == column
     end
   end
 end

@@ -80,7 +80,7 @@ describe Kanbantastic::Base do
   end
 
   describe "get" do
-    use_vcr_cassette "base/get", :record => :new_episodes
+    use_vcr_cassette "base/get"
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)

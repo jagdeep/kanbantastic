@@ -1,7 +1,7 @@
 module Kanbantastic
 
   class Task < Base
-    attr_accessor :id, :title, :column_id, :updated_at, :created_at, :moved_at, :task_type_id, :owner_id
+    attr_accessor :id, :title, :column_id, :updated_at, :created_at, :moved_at, :task_type_id, :owner_id, :position
     validates_presence_of :config, :id, :title, :column_id, :updated_at, :task_type_id
 
     def initialize(config, options = {})
@@ -59,34 +59,18 @@ module Kanbantastic
     end
 
     def move_to_first_column
-      result = true
-      current_position = Kanbantastic::Column.find(config, column_id).position
-      (current_position-1).times do
-        result = false unless move_to_previous_column
-      end
-      return result
+      column = Kanbantastic::Column.all(config).first
+      update(:column_id => column.id, :position => nil)
     end
 
     def move_to_second_column
-      result = true
-      current_position = Kanbantastic::Column.find(config, column_id).position
-      if current_position > 2
-        (current_position-2).times do
-          result = false unless move_to_previous_column
-        end
-      elsif current_position < 2
-        result = false unless move_to_next_column
-      end
-      return result
+      column = Kanbantastic::Column.all(config)[1]
+      update(:column_id => column.id, :position => nil)
     end
 
     def move_to_last_column
-      result = true
-      last_position = Kanbantastic::Column.all(config).last.position
-      (last_position - column.position).times do
-        result = false unless move_to_next_column
-      end
-      return result
+      column = Kanbantastic::Column.all(config).last
+      update(:column_id => column.id, :position => nil)
     end
 
     def archive
