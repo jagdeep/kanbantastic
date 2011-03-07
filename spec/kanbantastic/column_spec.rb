@@ -1,7 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Kanbantastic::Column do
-  use_vcr_cassette "cassette2", :erb => true
+  use_vcr_cassette "cassette2"
 
   before do
     @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)

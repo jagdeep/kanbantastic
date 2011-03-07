@@ -9,7 +9,7 @@ FakeWeb.allow_net_connect = false
 VCR.config do |c|
   c.cassette_library_dir     = 'spec/cassettes'
   c.stub_with                :fakeweb
-  c.default_cassette_options = { :record => :none }
+  c.default_cassette_options = { :record => :none, :erb => true }
 end
 
 RSpec.configure do |config|

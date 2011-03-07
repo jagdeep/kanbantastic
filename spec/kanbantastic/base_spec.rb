@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Kanbantastic::Base do
 
   describe "find_project_id" do
-    use_vcr_cassette "workspaces_with_projects", :erb => true
+    use_vcr_cassette "workspaces_with_projects"
 
     it "should project id for valid project name" do
       Kanbantastic::Base.find_project_id("Envision Integration", WORKSPACE, API_KEY).should == PROJECT_ID
@@ -52,7 +52,7 @@ describe Kanbantastic::Base do
   end
 
   describe "post" do
-    use_vcr_cassette "base/post", :erb => true
+    use_vcr_cassette "base/post"
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -80,7 +80,7 @@ describe Kanbantastic::Base do
   end
 
   describe "get" do
-    use_vcr_cassette "base/get", :erb => true
+    use_vcr_cassette "base/get"
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -108,7 +108,7 @@ describe Kanbantastic::Base do
   end
 
   describe "put" do
-    use_vcr_cassette "base/put", :erb => true
+    use_vcr_cassette "base/put"
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
