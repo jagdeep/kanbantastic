@@ -12,22 +12,22 @@
       code: 404
       message: Not Found
     headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      content-type: 
-      - text/html; charset=utf-8
       server: 
       - nginx/0.8.53
       date: 
       - <%= Time.now.utc %>
-      x-runtime: 
-      - "0.009158"
+      content-type: 
+      - text/html; charset=utf-8
+      transfer-encoding: 
+      - chunked
       status: 
       - 404 Not Found
       cache-control: 
       - no-cache
-      transfer-encoding: 
-      - chunked
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      x-runtime: 
+      - "0.062005"
     body: |
       <!DOCTYPE html>
       <html>
@@ -35,20 +35,20 @@
         <meta name="charset" content="utf-8" />
         <title>envision - Kanbanery</title>
       
-        <link rel="SHORTCUT ICON" href="http://kanbanery.com//favicon.ico" />
-      <link rel="icon" type="image/png" href="http://kanbanery.com//favicon.png" />
+        <link rel="SHORTCUT ICON" href="/favicon.ico" />
+      <link rel="icon" type="image/png" href="/favicon.png" />
       <link rel="apple-touch-icon" href="/images/iphone-icon.png" />
       
       
-        <link href="/assets/main.css?1299152942" media="all" rel="stylesheet" type="text/css" />
+        <link href="/assets/main.css?1299489467" media="all" rel="stylesheet" type="text/css" />
       
         <script type="text/javascript">
           var Application = {};
           Application.domain = "kanbanery.com";
         </script>
       
-        <script src="/assets/main.js?1299152941" type="text/javascript"></script>
-        <script src="/js/templates.js?1299152998" type="text/javascript"></script>
+        <script src="/assets/main.js?1299489467" type="text/javascript"></script>
+        <script src="/js/templates.js?1299489552" type="text/javascript"></script>
       
         <script type="text/javascript">
           WEB_SOCKET_SWF_LOCATION = "/javascripts/vendor/web-socket-js/WebSocketMain.swf";
@@ -67,7 +67,7 @@
       </head>
       <body>
         <div id="header" class="clearfix">
-          <h1><a href="http://kanbanery.com/"><img alt="Kanbanery-logo-small" src="/images/kanbanery-logo-small.png?1299152746" /></a></h1>
+          <h1><a href="http://kanbanery.com/"><img alt="Kanbanery-logo-small" src="/images/kanbanery-logo-small.png?1299489403" /></a></h1>
           <ul id="account">
             <li><a href="http://support.kanbanery.com">Support</a></li>
         <li><a href="https://kanbanery.com/login">Sign in</a></li>
@@ -115,23 +115,52 @@
       code: 200
       message: OK
     headers: 
-      x-ua-compatible: 
-      - IE=Edge,chrome=1
-      etag: 
-      - "\"19f8716b8a535191f0014603f4a75ebe\""
-      content-type: 
-      - application/json; charset=utf-8
-      x-runtime: 
-      - "0.044214"
-      date: 
-      - <%= Time.now.utc %>
       server: 
       - nginx/0.8.53
-      cache-control: 
-      - max-age=0, private, must-revalidate
-      status: 
-      - 200 OK
+      date: 
+      - <%= Time.now.utc %>
+      content-type: 
+      - application/json; charset=utf-8
       transfer-encoding: 
       - chunked
+      status: 
+      - 200 OK
+      etag: 
+      - "\"19f8716b8a535191f0014603f4a75ebe\""
+      cache-control: 
+      - max-age=0, private, must-revalidate
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      x-runtime: 
+      - "0.038398"
     body: "[{\"id\":1394,\"created_at\":\"2010-10-19T11:29:31+00:00\",\"updated_at\":\"2010-10-19T11:29:31+00:00\",\"name\":\"envision\",\"type\":\"Workspace\",\"projects\":[{\"id\":2817,\"created_at\":\"2011-01-18T23:54:09+00:00\",\"updated_at\":\"2011-02-04T02:33:32+00:00\",\"name\":\"Envision Integration\",\"type\":\"Project\"}]}]"
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :head
+    uri: https://kanbanery.com:443/api/v1/test.json
+    body: 
+    headers: 
+      x-kanbanery-apitoken: 
+      - secret
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 404
+      message: Not Found
+    headers: 
+      server: 
+      - nginx/0.8.53
+      date: 
+      - <%= Time.now.utc %>
+      content-type: 
+      - text/html; charset=utf-8
+      status: 
+      - 404 Not Found
+      cache-control: 
+      - no-cache
+      x-ua-compatible: 
+      - IE=Edge,chrome=1
+      x-runtime: 
+      - "0.006662"
+    body: 
     http_version: "1.1"

@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Kanbantastic::Base do
 
   describe "find_project_id" do
-    use_vcr_cassette "workspaces_with_projects", :erb => true
+    use_vcr_cassette "workspaces_with_projects"
 
     it "should project id for valid project name" do
       Kanbantastic::Base.find_project_id("Envision Integration", WORKSPACE, API_KEY).should == PROJECT_ID
@@ -52,7 +52,7 @@ describe Kanbantastic::Base do
   end
 
   describe "post" do
-    use_vcr_cassette "base/post", :erb => true
+    use_vcr_cassette "base/post"
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -80,7 +80,7 @@ describe Kanbantastic::Base do
   end
 
   describe "get" do
-    use_vcr_cassette "base/get", :erb => true
+    use_vcr_cassette "base/get"
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -108,7 +108,7 @@ describe Kanbantastic::Base do
   end
 
   describe "put" do
-    use_vcr_cassette "base/put", :erb => true
+    use_vcr_cassette "base/put"
 
     before do
       @config = Kanbantastic::Config.new(API_KEY, WORKSPACE, PROJECT_ID)
@@ -146,21 +146,25 @@ describe Kanbantastic::Base do
     end
 
     it "should fix updated_at, created_at and moved_at when time is set in future" do
-      future_time = Time.now.utc + 1
-      response = {:created_at => future_time, :updated_at => future_time, :moved_at => future_time}
-      response = Kanbantastic::Base.send("rectify_time", response, future_time)
-      response[:created_at].should == (future_time - 1)
-      response[:updated_at].should == (future_time - 1)
-      response[:moved_at].should == (future_time - 1)
+      @header_time = Time.now.utc + 1
+      VCR.use_cassette('base/rectify_time', :erb => { :header_time => @header_time }) do
+        response = {:created_at => @header_time, :updated_at => @header_time, :moved_at => @header_time}
+        response = Kanbantastic::Base.send("rectify_time", response)
+        response[:created_at].should == (@header_time - 1)
+        response[:updated_at].should == (@header_time - 1)
+        response[:moved_at].should == (@header_time - 1)
+      end
     end
 
     it "should fix updated_at, created_at and moved_at when time is set in past" do
-      past_time = Time.now.utc - 1
-      response = {:created_at => past_time, :updated_at => past_time, :moved_at => past_time}
-      response = Kanbantastic::Base.send("rectify_time", response, past_time)
-      response[:created_at].should == (past_time + 1)
-      response[:updated_at].should == (past_time + 1)
-      response[:moved_at].should == (past_time + 1)
+      @header_time = Time.now.utc - 1
+      VCR.use_cassette('base/rectify_time', :erb => { :header_time => @header_time }) do
+        response = {:created_at => @header_time, :updated_at => @header_time, :moved_at => @header_time}
+        response = Kanbantastic::Base.send("rectify_time", response)
+        response[:created_at].should == (@header_time + 1)
+        response[:updated_at].should == (@header_time + 1)
+        response[:moved_at].should == (@header_time + 1)
+      end
     end
   end
 end
