@@ -17,7 +17,6 @@ RSpec.configure do |config|
   config.mock_with :mocha
 end
 
-
 API_KEY = 'secret'
 PROJECT_ID = 2817
 WORKSPACE = 'envision'

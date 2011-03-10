@@ -88,18 +88,26 @@ module Kanbantastic
     private
 
     def self.parse_response response
-      rectify_time(symbolize_keys(response.parsed_response), Time.parse(response.header['date']))
+      rectify_time(symbolize_keys(response.parsed_response))
     end
 
-    def self.rectify_time response, time
-      diff = Time.now.utc.to_i - time.utc.to_i
-      raise "Kanbanery server has a time difference of #{diff} seconds" if diff > 1
+    def self.rectify_time response
+      diff = server_time_difference
       if response.class == Array
         response.each{|r| RECTIFY_TIME_FOR.each{|k| (r[k] += diff) if r[k]}}
       else
         RECTIFY_TIME_FOR.each{|k| (response[k] += diff) if response[k]}
       end
       return response
+    end
+
+    def self.server_time_difference
+      diff = (Time.now.utc.to_i - Time.parse(head("https://kanbanery.com/api/v1/test.json").headers['date']).utc.to_i)
+      if diff > 1
+        raise "Kanbanery server has a time difference of #{diff} seconds"
+      else
+        return diff
+      end
     end
 
     def check_parameter_format options={}

@@ -146,21 +146,25 @@ describe Kanbantastic::Base do
     end
 
     it "should fix updated_at, created_at and moved_at when time is set in future" do
-      future_time = Time.now.utc + 1
-      response = {:created_at => future_time, :updated_at => future_time, :moved_at => future_time}
-      response = Kanbantastic::Base.send("rectify_time", response, future_time)
-      response[:created_at].should == (future_time - 1)
-      response[:updated_at].should == (future_time - 1)
-      response[:moved_at].should == (future_time - 1)
+      @header_time = Time.now.utc + 1
+      VCR.use_cassette('base/rectify_time', :erb => { :header_time => @header_time }) do
+        response = {:created_at => @header_time, :updated_at => @header_time, :moved_at => @header_time}
+        response = Kanbantastic::Base.send("rectify_time", response)
+        response[:created_at].should == (@header_time - 1)
+        response[:updated_at].should == (@header_time - 1)
+        response[:moved_at].should == (@header_time - 1)
+      end
     end
 
     it "should fix updated_at, created_at and moved_at when time is set in past" do
-      past_time = Time.now.utc - 1
-      response = {:created_at => past_time, :updated_at => past_time, :moved_at => past_time}
-      response = Kanbantastic::Base.send("rectify_time", response, past_time)
-      response[:created_at].should == (past_time + 1)
-      response[:updated_at].should == (past_time + 1)
-      response[:moved_at].should == (past_time + 1)
+      @header_time = Time.now.utc - 1
+      VCR.use_cassette('base/rectify_time', :erb => { :header_time => @header_time }) do
+        response = {:created_at => @header_time, :updated_at => @header_time, :moved_at => @header_time}
+        response = Kanbantastic::Base.send("rectify_time", response)
+        response[:created_at].should == (@header_time + 1)
+        response[:updated_at].should == (@header_time + 1)
+        response[:moved_at].should == (@header_time + 1)
+      end
     end
 
     it "should raise error if time offset is more than 1 sec to avoid mistakes due to network latency" do
