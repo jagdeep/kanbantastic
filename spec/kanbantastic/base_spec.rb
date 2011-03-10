@@ -169,9 +169,11 @@ describe Kanbantastic::Base do
 
     it "should raise error if time offset is more than 1 sec to avoid mistakes due to network latency" do
       past_time = Time.now.utc - 2
-      response = {:created_at => past_time, :updated_at => past_time, :moved_at => past_time}
-      expected_error = "Kanbanery server has a time difference of 2 seconds"
-      lambda { Kanbantastic::Base.send("rectify_time", response, past_time) }.should raise_error expected_error
+      VCR.use_cassette('base/rectify_time', :erb => { :header_time => past_time }) do
+        response = {:created_at => past_time, :updated_at => past_time, :moved_at => past_time}
+        expected_error = "Kanbanery server has a time difference of 2 seconds"
+        lambda { Kanbantastic::Base.send("rectify_time", response) }.should raise_error expected_error
+      end
     end
   end
 end
